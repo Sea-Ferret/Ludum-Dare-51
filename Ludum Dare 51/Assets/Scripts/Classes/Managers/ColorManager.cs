@@ -16,7 +16,6 @@ namespace Murgn
         [SerializeField] private Image[] secondaryImages;
         [SerializeField] private TextMeshProUGUI[] secondaryText;
         
-        private Manager manager;
         public ColorPalette chosenPalette;
 
         private void OnEnable()
@@ -42,10 +41,9 @@ namespace Murgn
         public override void Awake()
         {
             base.Awake();
-            manager = Manager.instance;
             chosenPalette = colorPalettes[Random.Range(0, colorPalettes.Length)];
 
-            manager.mainCamera.backgroundColor = chosenPalette.secondaryColor;
+            Camera.main.backgroundColor = chosenPalette.secondaryColor;
             
             for (int i = 0; i < primarySprites.Length; i++)
                 primarySprites[i].color = chosenPalette.primaryColor;

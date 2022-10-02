@@ -21,9 +21,13 @@ namespace Murgn
         #region PlayerController
 
         public static Action<Vector2Int> PlayerMove;
+        public static Action PlayerDeath;
 
         #endregion
 
         public static Action TimerMax;
+
+        public static Action<Vector2Int> DestroyTile;
+
     }
 }

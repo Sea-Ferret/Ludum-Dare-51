@@ -25,5 +25,12 @@ namespace Murgn
             audioMixer.SetFloat("Volume", Mathf.Log10(volume / 10000) * 20.0f);
             PlayerPrefs.SetFloat("Volume", volume / 10000);
         }
+        
+        // Volume slider should have a min value of 1, max value of 10000
+        public void VolumeChange(bool increase = true)
+        {
+            Debug.Log("Changed volume");
+            slider.value += increase ? 1250 : -1250;
+        }
     }   
 }
